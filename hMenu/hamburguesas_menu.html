@@ -1,137 +1,367 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Santo Pecado</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            background-color: #fcfcfc;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú Santo Pecado</title>
 
-        .menu-card {
-            background-color: #fff;
-            width: 95%;
-            max-width: 500px;
-            margin: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-            padding-bottom: 30px;
-        }
-        .button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #25D366;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-} 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        /* Manchas de fondo */
-        .shape { position: absolute; z-index: 1; border-radius: 50%; }
-        .shape.green-top { top: -30px; left: -30px; width: 140px; height: 140px; background-color: #d8f3bc; }
-        .shape.red-middle { top: 150px; left: -60px; width: 220px; height: 220px; background-color: #f75c50; opacity: 0.9; }
-        .shape.green-bottom { bottom: -40px; right: -40px; width: 200px; height: 200px; background-color: #d8f3bc; }
+<style>
 
-        .content { position: relative; z-index: 2; padding: 25px; }
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:#0c0c0f;
+    display:flex;
+    justify-content:center;
+}
 
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .title h1 { font-size: 35px; margin: 0; color: #4b2a1a; letter-spacing: 2px; }
-        .title h2 { font-size: 14px; margin: 0; color: #c1002c; font-weight: bold; }
-        .logo-placeholder { width: 70px; height: 70px; background: #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; text-align: center; }
+.menu-card{
+    background:#111118;
+    width:95%;
+    max-width:750px;
+    margin:40px 0;
+    border-radius:25px;
+    box-shadow:0 0 40px rgba(179,0,255,0.15);
+    overflow:hidden;
+    border:1px solid #1f1f2e;
+}
 
-        .section-title { 
-            display: inline-block; 
-            padding: 5px 15px; 
-            color: white; 
-            font-weight: bold; 
-            margin: 15px 0; 
-            text-transform: uppercase;
-        }
-        .bg-green { background-color: #24a13c; }
-        .bg-yellow { background-color: #d8f3bc; color: #333; }
-        .bg-orange { background-color: #f75c50; }
+.content{
+    padding:40px;
+    color:#f5f5f5;
+}
 
-        .item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; font-weight: bold; }
-        .dots { flex-grow: 1; border-bottom: 2px dotted #444; margin: 0 8px; }
-        .price { color: #c1002c; }
+.header{
+    text-align:center;
+}
 
-        .footer { margin-top: 30px; }
-        .delivery { background: #f75c50; color: white; padding: 5px 10px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
-        .whatsapp { font-weight: bold; font-size: 18px; }
-        
-        .qr-area { position: absolute; bottom: 20px; right: 20px; text-align: center; }
-        .qr-box { width: 90px; height: 90px; border: 2px solid #333; background: white; margin-top: 5px; display: flex; align-items: center; justify-content: center; font-size: 10px; }
+.title h1{
+    font-family:'Playfair Display',serif;
+    font-size:42px;
+    margin:0;
+    letter-spacing:4px;
+    color:#ffffff;
+}
 
-        .food-img { width: 150px; display: block; margin: 10px auto; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2)); }
-    </style>
+.title h2{
+    margin:5px 0 15px;
+    font-size:14px;
+    letter-spacing:6px;
+    color:#b300ff;
+    text-shadow:0 0 8px #b300ff;
+}
+
+.slogan{
+    font-size:14px;
+    color:#aaa;
+    margin-bottom:20px;
+}
+
+.divider{
+    width:70px;
+    height:3px;
+    background:linear-gradient(90deg,#b300ff,#ff8c00);
+    margin:20px auto 40px;
+    border-radius:10px;
+}
+
+/* COMBO */
+.combo{
+    background:linear-gradient(145deg,#15151d,#1a1a25);
+    border:1px solid #b300ff;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:35px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(179,0,255,0.25);
+    transition:0.3s;
+}
+
+.combo:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 45px rgba(179,0,255,0.5);
+}
+
+.combo h3{
+    margin:0 0 10px;
+    color:#ff8c00;
+    letter-spacing:2px;
+    font-size:16px;
+}
+
+.combo-title{
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.combo-price{
+    font-size:22px;
+    color:#b300ff;
+    font-weight:700;
+}
+
+.menu-section{
+    background:#15151d;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:35px;
+    border:1px solid #1f1f2e;
+}
+
+.section-title{
+    font-size:18px;
+    font-weight:600;
+    color:#ff8c00;
+    margin-bottom:20px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.menu-item{
+    border-bottom:1px solid #1f1f2e;
+    margin-bottom:10px;
+}
+
+.menu-item input{
+    display:none;
+}
+
+.item-header{
+    display:flex;
+    justify-content:space-between;
+    cursor:pointer;
+    padding:12px 0;
+    transition:0.3s;
+}
+
+.item-header:hover{
+    color:#b300ff;
+}
+
+.description{
+    max-height:0;
+    overflow:hidden;
+    font-size:13px;
+    color:#bbb;
+    opacity:0;
+    transition:max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.menu-item input:checked ~ .description{
+    max-height:200px;
+    opacity:1;
+    margin-bottom:10px;
+    padding-top:8px;
+}
+
+.price{
+    color:#b300ff;
+    font-weight:600;
+}
+
+.badge{
+    background:#ff8c00;
+    color:#111;
+    font-size:10px;
+    padding:3px 8px;
+    border-radius:20px;
+    margin-left:8px;
+}
+
+.button{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 45px;
+    background:linear-gradient(45deg,#b300ff,#ff8c00);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    border-radius:50px;
+    letter-spacing:1px;
+    transition:0.3s;
+    box-shadow:0 0 20px rgba(179,0,255,0.6);
+}
+
+.button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 35px rgba(179,0,255,0.9);
+}
+
+.section{
+    text-align:center;
+    margin-top:40px;
+}
+
+footer{
+    text-align:center;
+    margin-top:50px;
+    font-size:10px;
+    letter-spacing:2px;
+    color:#2a2a35;
+    opacity:0.5;
+    transition:0.3s;
+}
+
+.footer:hover .brand::after{
+    content:" - JAS Digital Studio";
+}
+
+iframe{
+    width:100%;
+    height:250px;
+    border-radius:15px;
+    border:0;
+    margin-top:15px;
+}
+
+</style>
 </head>
+
 <body>
 
 <div class="menu-card">
-    <div class="shape green-top"></div>
-    <div class="shape red-middle"></div>
-    <div class="shape green-bottom"></div>
+<div class="content">
 
-    <div class="content">
-        <div class="header">
-            <div class="title">
-                <h1>MENÚ</h1>
-                <h2>SANTO PECADO</h2>
-            </div>
-             <img src="logoH.jpeg" alt="Logo Café Alejandría" class="logo">
-        </div>
-
-        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-            <div style="flex: 1; min-width: 200px;">
-                <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" class="food-img" alt="Hamburguesa">
-                
-                <div class="section-title bg-green">Hamburguesas</div>
-                <div class="item"><span>Sencilla</span><span class="dots"></span><span class="price">$65</span></div>
-                <div class="item"><span>Clásica</span><span class="dots"></span><span class="price">$85</span></div>
-                <div class="item"><span>Hawaiana</span><span class="dots"></span><span class="price">$85</span></div>
-                <div class="item"><span>3 Quesos</span><span class="dots"></span><span class="price">$85</span></div>
-            </div>
-
-            <div style="flex: 1; min-width: 200px;">
-                <div class="section-title bg-yellow">Bebidas</div>
-                <div class="item"><span>Coca cola</span><span class="dots"></span><span class="price">$25</span></div>
-                <div class="item"><span>Boing</span><span class="dots"></span><span class="price">$25</span></div>
-                
-                <img src="https://cdn-icons-png.flaticon.com/512/5787/5787100.png" class="food-img" style="width: 120px;">
-
-                <div class="section-title bg-orange">Hot - Dog's</div>
-                <div class="item"><span>Orden (3pzs)</span><span class="dots"></span><span class="price">$60</span></div>
-                <div class="item"><span>Especial</span><span class="dots"></span><span class="price">$40</span></div>
-            </div>
-        </div>
-     
-        
-        <div class="section">
-    <h2>Haz tu pedido ahora</h2>
-    <a class="button" 
-    href="https://api.whatsapp.com/send?phone=+525549047151&text=Hola,%20me%20gustaría%20ordenar ...."
-     target="_blank">Pedir por WhatsApp</a>
+<div class="header">
+<img src="logo2-.png" alt="Santo Pecado - The Burger Club" width="250">
+<div class="title">
+<h1>MENÚ</h1>
 </div>
-    
-    <div class="section">
-    <h2>Ubicación</h2>
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3760.36437299166!2d-98.906444!3d19.561224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDMzJzQwLjQiTiA5OMKwNTQnMjMuMiJX!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"
-        width="100%" 
-        height="300" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy">
-    </iframe>
+<div class="slogan">El sabor que rompe las reglas</div>
+<div class="divider"></div>
+</div>
+
+<div class="combo">
+<h3>⭐ COMBO RECOMENDADO</h3>
+<div class="combo-title">Clásica + Papas + Refresco</div>
+<div class="combo-price">$110</div>
+</div>
+
+<div class="menu-section">
+<div class="section-title">Hamburguesas</div>
+
+<div class="menu-item">
+<input type="checkbox" id="sencilla">
+<label for="sencilla" class="item-header">
+<span>Sencilla</span>
+<span class="price">$65</span>
+</label>
+<div class="description">
+Carne jugosa con queso amarillo, verdura, aderezos y papas tipo sabritas.
+</div>
+</div>
+
+<div class="menu-item">
+<input type="checkbox" id="clasica">
+<label for="clasica" class="item-header">
+<span>Clásica <span class="badge">Más Vendida</span></span>
+<span class="price">$85</span>
+</label>
+<div class="description">
+Carne jugosa, queso amarillo, queso manchego, tocino, aderezos, verdura y papas a la francesa.
+</div>
+</div>
+
+<div class="menu-item">
+<input type="checkbox" id="hawaiana">
+<label for="hawaiana" class="item-header">
+<span>Hawaiana</span>
+<span class="price">$85</span>
+</label>
+<div class="description">
+Carne jugosa, queso amarillo, queso manchego, jamón, tocino, piña caramelizada, aderezos, verdura y papas a la francesa.
+</div>
+</div>
+
+<div class="menu-item">
+<input type="checkbox" id="tresquesos">
+<label for="tresquesos" class="item-header">
+<span>3 Quesos</span>
+<span class="price">$85</span>
+</label>
+<div class="description">
+Carne jugosa, queso amarillo, queso manchego, queso Oaxaca, jamón, tocino, aderezos, verdura y papas a la francesa.
+</div>
+</div>
+
+</div>
+
+<div class="menu-section">
+<div class="section-title">Hot Dogs</div>
+
+<div class="menu-item">
+<input type="checkbox" id="orden">
+<label for="orden" class="item-header">
+<span>Orden de Hot-dogs</span>
+<span class="price">$60</span>
+</label>
+<div class="description">
+Incluye 3 hot-dogs tradicionales.
+</div>
+</div>
+
+<div class="menu-item">
+<input type="checkbox" id="especial">
+<label for="especial" class="item-header">
+<span>Hot-dog Especial</span>
+<span class="price">$40</span>
+</label>
+<div class="description">
+Salchicha, tocino, queso manchego y papas tipo sabritas.
+</div>
+</div>
+
+<div class="menu-item">
+<input type="checkbox" id="sandwich">
+<label for="sandwich" class="item-header">
+<span>Sandwich</span>
+<span class="price">$50</span>
+</label>
+<div class="description">
+Jamon, tocino, queso manchego y papas tipo sabritas.
+</div>
+</div>
+
+</div>
+
+<div class="menu-section">
+<div class="section-title">Bebidas</div>
+
+<div class="item-header">
+<span>Coca-Cola</span>
+<span class="price">$25</span>
+</div>
+
+<div class="item-header">
+<span>Boing</span>
+<span class="price">$25</span>
+</div>
+
+</div>
+
+<div class="section">
+<a class="button" 
+href="https://api.whatsapp.com/send?phone=5549047151&text=Hola%20quiero%20pedir..."
+target="_blank">
+📲 Ordenar Ahora
+</a>
+</div>
+
+<div class="section">
+<div class="section-title">Ubicación</div>
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3760.36437299166!2d-98.906444!3d19.561224!2m3!1f0!2f0!3f0!3m2!1i1024!2f768!4f13.1!3m2!1m1!2zMTnCsDMzJzQwLjQiTiA5OMKwNTQnMjMuMiJX!5e0!3m2!1ses-419!2smx"
+loading="lazy">
+</iframe>
+<div class="footer">
+<span class="brand">JDS</span>
+</div>
+</div>
+
+</div>
 </div>
 
 </body>
